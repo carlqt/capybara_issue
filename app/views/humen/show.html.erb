@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Male:</strong>
+  <%= @human.male %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @human.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @human.age %>
+</p>
+
+<%= link_to 'Edit', edit_human_path(@human) %> |
+<%= link_to 'Back', humen_path %>

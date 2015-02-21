@@ -1,0 +1,38 @@
+<%= form_for(@human) do |f| %>
+  <% if @human.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@human.errors.count, "error") %> prohibited this human from being saved:</h2>
+
+      <ul>
+      <% @human.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary">
+        <%= f.radio_button :male, "true", inline_label: true %>
+        Yes
+      </label>
+      <label class="btn btn-primary">
+        <%= f.radio_button :male, "false", inline_label: true %>
+        No
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
